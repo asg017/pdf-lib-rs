@@ -1,6 +1,6 @@
 [package]
 name = "pdf-lib-rs"
-version = "0.0.1"
+version = "0.0.3"
 edition = "2021"
 description = "A pure Rust PDF parsing and writing library"
 license = "MIT OR Apache-2.0"
