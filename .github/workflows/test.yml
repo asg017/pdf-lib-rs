@@ -1,0 +1,30 @@
+name: "build"
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: read
+jobs:
+  build-extension:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-20.04
+            target: linux-x86_64
+          - os: ubuntu-22.04-arm
+            target: linux-aarch64
+          - os: macos-13
+            target: macos-x86_64
+          - os: macos-14
+            target: macos-aarch64
+          - os: windows-2022
+            target: windows-x86_64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - run: cargo test
