@@ -1,0 +1,12 @@
+[package]
+name = "pdf-lib-rs"
+version = "0.0.1"
+edition = "2021"
+description = "A pure Rust PDF parsing and writing library"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/asg017/pdf-lib-rs"
+
+[dependencies]
+thiserror = "2"
+flate2 = "1"
+weezl = "0.1"
